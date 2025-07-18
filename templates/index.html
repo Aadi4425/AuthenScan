@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Home - Fraud Detection Portal{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="mb-4 display-5 fw-bold">AuthenScan</h1>
+    <p class="lead mb-5">Choose the method to detect fraud:</p>
+
+    <div class="row justify-content-center g-5">
+        <div class="col-md-5">
+            <div class="card option-card p-4">
+                <h3>📄 Upload Invoice Image</h3>
+                <p class="mt-2">Use OCR & CNN model to detect forged invoices.</p>
+                <a href="/invoice" class="btn option-btn mt-3">Detect from Invoice</a>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card option-card p-4">
+                <h3>🏦 Bank Transaction Checker</h3>
+                <p class="mt-2">Enter sender/receiver accounts to verify suspicious transactions.</p>
+                <a href="/transaction" class="btn option-btn mt-3">Check Transaction</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .option-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 20px;
+        transition: transform 0.3s ease, background 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+    .option-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+    .option-btn {
+        background-color: #00c9ff;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        color: white;
+        transition: background 0.3s ease;
+    }
+    .option-btn:hover {
+        background-color: #92fe9d;
+        color: #000;
+    }
+</style>
+{% endblock %}

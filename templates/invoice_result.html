@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Invoice Check Result{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <div class="card p-4 shadow-lg mx-auto" style="max-width: 700px;">
+        <h2 class="mb-4">🧾 Invoice Fraud Detection Result</h2>
+
+        {% if "Fraudulent" in result %}
+            <div class="alert alert-danger fw-bold fs-5">
+                {{ result }}<br>
+                <span class="badge bg-danger mt-2">⚠️ Fake Invoice</span>
+            </div>
+        {% else %}
+            <div class="alert alert-success fw-bold fs-5">
+                {{ result }}<br>
+                <span class="badge bg-success mt-2">✅ Genuine Invoice</span>
+            </div>
+        {% endif %}
+
+        {% if confidence %}
+            <p class="text-muted small">🤖 Model Confidence: <strong>{{ confidence | round(2) }}%</strong></p>
+        {% endif %}
+
+        {% if image %}
+            <img src="{{ url_for('static', filename='uploads/' ~ image.split('/')[-1]) }}"
+                 class="img-fluid mt-4 rounded shadow border"
+                 style="max-height: 400px;"
+                 alt="Uploaded Invoice">
+        {% endif %}
+
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 mt-4">
+            <a href="/invoice" class="btn btn-outline-info">🔁 Check Another Invoice</a>
+            <a href="/" class="btn btn-success">🏠 Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

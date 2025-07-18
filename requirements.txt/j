@@ -1,0 +1,11 @@
+Flask
+scikit-learn
+pandas
+numpy
+matplotlib
+xgboost
+tensorflow
+Pillow
+email-validator
+Flask-Mail
+joblib

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Transaction Fraud Check{% endblock %}
+
+{% block content %}
+<div class="card mx-auto p-4 shadow" style="max-width: 800px;">
+    <h2 class="text-center mb-4">🏦 Transaction Laundering Detection</h2>
+    <form method="POST" action="/transaction">
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">From Bank</label>
+                <input list="from-bank-list" class="form-control" name="from_bank" placeholder="E.g. 10" required>
+                <datalist id="from-bank-list">
+                    <option value="1">
+                    <option value="10">
+                    <option value="12">
+                    <option value="3208">
+                    <option value="3209">
+                </datalist>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">To Bank</label>
+                <input list="bank-list" class="form-control" name="to_bank" placeholder="E.g. 10" required>
+                <datalist id="bank-list">
+                    <option value="1">
+                    <option value="10">
+                    <option value="12">
+                    <option value="3208">
+                    <option value="3209">
+                </datalist>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Sender Account</label>
+                <input list="sender-list" class="form-control" name="account" placeholder="E.g. 8000F5030" required>
+                <datalist id="sender-list">
+                    {% for sender in sender_list %}
+                        <option value="{{ sender }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Receiver Account</label>
+                <input list="receiver-list" class="form-control" name="receiver_account" placeholder="E.g. 8000EBAC0" required>
+                <datalist id="receiver-list">
+                    {% for receiver in receiver_list %}
+                        <option value="{{ receiver }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Amount Received</label>
+                <input type="number" step="0.01" class="form-control" name="amount_received" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Amount Paid</label>
+                <input type="number" step="0.01" class="form-control" name="amount_paid" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Payment Format</label>
+                <select class="form-select" name="payment_format" required>
+                    <option value="" disabled selected>Select Payment Format</option>
+                    <option value="Cheque">Cheque</option>
+                    <option value="Reinvestment">Reinvestment</option>
+                    <option value="Bitcoin">Bitcoin</option>
+                    <option value="Cash">Cash</option>
+                    <option value="ACH">ACH</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Wire Transfer">Wire Transfer</option>
+                    <option value="Cash Deposit">Cash Deposit</option>
+                    <option value="Online Payment">Online Payment</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <label class="form-label">Your Email</label>
+                <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 w-100">Check Transaction</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/" class="btn btn-outline-light"> Back to Home</a>
+    </div>
+</div>
+{% endblock %}

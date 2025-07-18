@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="card shadow-lg p-5 bg-dark text-white">
+        <h2 class="text-center mb-4">🌐 About Our Fraud Detection System</h2>
+        
+        <p class="fs-5">
+            Welcome to our advanced <strong>Fraud Detection System</strong> — a comprehensive platform designed to detect and prevent financial fraud in real-time.
+            Whether it’s a suspicious invoice or a laundering transaction, our AI-powered tools ensure accuracy, security, and peace of mind for businesses and individuals.
+        </p>
+
+        <h4 class="mt-4">🔍 What We Detect</h4>
+        <ul class="fs-5">
+            <li>🧾 Forged or tampered invoices using CNN + ELA</li>
+            <li>💸 Suspicious money laundering patterns in transactions using ML</li>
+            <li>📧 Real-time email alerts for detected anomalies</li>
+        </ul>
+
+        <h4 class="mt-4">⚙️ Technology Stack</h4>
+        <ul class="fs-5">
+            <li><strong>Frontend:</strong> HTML5, Bootstrap 5, Jinja2</li>
+            <li><strong>Backend:</strong> Flask, Python</li>
+            <li><strong>Machine Learning:</strong> Random Forest, XGBoost, CNN (TensorFlow)</li>
+            <li><strong>Email Alerts:</strong> Gmail SMTP + App Password Auth</li>
+        </ul>
+
+        <h4 class="mt-4">🚀 Why Use This App?</h4>
+        <ul class="fs-5">
+            <li>Protect your finances with intelligent risk detection</li>
+            <li>Get instant feedback and alerts</li>
+            <li>Seamlessly analyze both visual (invoices) and numeric (transactions) data</li>
+        </ul>
+
+        <div class="mt-5">
+            <h4>📫 Contact Us</h4>
+            <p class="fs-5">
+                Have questions or suggestions? Reach us at 
+                <a href="mailto:oswalaadi2@gmail.com" class="text-info">oswalaadi2@gmail.com</a>
+            </p>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-outline-light">Home </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

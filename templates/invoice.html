@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Invoice Fraud Detection{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center text-info mb-4">Upload Invoice for Fraud Check</h2>
+
+    <form id="invoice-form" action="/invoice" method="POST" enctype="multipart/form-data" class="p-4 bg-secondary rounded shadow">
+        <div class="mb-3">
+            <label for="email" class="form-label text-white">Customer Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter customer's email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="invoice" class="form-label text-white">Upload Invoice Image (JPG/PNG)</label>
+            <input type="file" class="form-control" name="invoice" accept="image/*" required>
+            <small class="form-text text-light">Only .jpg, .jpeg or .png files. Recommended size: under 2MB.</small>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-info w-100">Check Invoice</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/" class="btn btn-outline-light"> Back to Home</a>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("invoice-form");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", () => {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "⏳ Checking Invoice...";
+    });
+</script>
+{% endblock %}

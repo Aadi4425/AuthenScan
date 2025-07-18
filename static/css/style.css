@@ -1,0 +1,37 @@
+/* static/style.css */
+body {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+input.form-control, select.form-control {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+input.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px #00c9ff;
+}
+
+.btn-primary {
+    background-color: #00c9ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #92fe9d;
+    color: black;
+}

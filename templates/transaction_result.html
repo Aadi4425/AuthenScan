@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Transaction Check Result{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-4 shadow-lg mx-auto text-center" style="max-width: 600px;">
+        <h2 class="mb-4">💳 Transaction Fraud Detection Result</h2>
+
+        {% if "Laundering" in result %}
+            <p class="lead text-danger fw-bold fs-4">{{ result }}</p>
+            <span class="badge bg-danger fs-6 p-2 mt-2">⚠️ Suspicious Transaction</span>
+        {% else %}
+            <p class="lead text-success fw-bold fs-4">{{ result }}</p>
+            <span class="badge bg-success fs-6 p-2 mt-2">✅ Safe Transaction</span>
+        {% endif %}
+
+        <hr class="my-4">
+
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="/transaction" class="btn btn-outline-primary">🔁 Check Another Transaction</a>
+            <a href="/" class="btn btn-success">🏠 Go Back Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

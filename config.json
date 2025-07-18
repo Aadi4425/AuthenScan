@@ -1,0 +1,6 @@
+{
+  "gmail_user": "oswalaadi2@gmail.com",
+  "gmail_password": "skeigkhvytfdghal",
+  "subject": "Fraud Detection Alert",
+  "body_template": "Dear Customer,\n\n{details}\n\nThank you,\nFraud Detection System"
+}
