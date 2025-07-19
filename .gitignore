@@ -1,7 +1,48 @@
-venv/
+# Python bytecode
 __pycache__/
-*.pyc
-*.pkl
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
 .env
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Logs
 *.log
+
+# Model and ML files
+*.h5
+*.pkl
+*.joblib
+*.tflite
+
+# TensorBoard logs and outputs
+logs/
+events.out.*
+
+# VSCode
+.vscode/
+
+# macOS metadata
+Icon?
+
+# Flask/Machine Learning cache
+instance/
+*.sqlite3
+*.db
+
+# Others
+*.zip
+*.tar
+*.gz
